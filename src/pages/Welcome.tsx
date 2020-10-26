@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Card, Alert, Typography } from 'antd';
+import { useModel } from 'umi';
 import styles from './Welcome.less';
 
 const CodePreview: React.FC<{}> = ({ children }) => (
@@ -11,8 +12,14 @@ const CodePreview: React.FC<{}> = ({ children }) => (
   </pre>
 );
 
-export default (): React.ReactNode => (
-  <PageContainer>
+export default (props: any) => {
+  // const masterProps = useModel('@@qiankunStateFromMaster');
+  // console.log(masterProps, "==================masterProps===================")
+  // useEffect(() => {
+  //   // masterProps.setQiankunGlobalState({})
+  // },[])
+  return (
+    <PageContainer>
     <Card>
       <Alert
         message="更快更强的重型组件，已经发布。"
@@ -45,4 +52,5 @@ export default (): React.ReactNode => (
       <CodePreview>yarn add @ant-design/pro-layout</CodePreview>
     </Card>
   </PageContainer>
-);
+)};
+

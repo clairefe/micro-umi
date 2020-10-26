@@ -1,3 +1,8 @@
+/*
+ * @Date: 2020-10-20 19:28:11
+ * @LastEditors: hu.wenjun
+ * @LastEditTime: 2020-10-26 20:41:30
+ */
 // https://umijs.org/config/
 import { defineConfig } from 'umi';
 import defaultSettings from './defaultSettings';
@@ -48,35 +53,17 @@ export default defineConfig({
           routes: [
             {
               path: '/',
-              redirect: '/list',
+              redirect: '/flow',
             },
             {
-              path: '/list',
-              name: 'list',
-              icon: 'smile',
-              component: './Welcome',
+              path: '/flow',
+              name: 'flow',
+              component: './Welcome'
             },
             // {
-            //   path: '/admin',
-            //   name: 'admin',
-            //   icon: 'crown',
-            //   component: './Admin',
-            //   authority: ['admin'],
-            //   routes: [
-            //     {
-            //       path: '/admin/sub-page',
-            //       name: 'sub-page',
-            //       icon: 'smile',
-            //       component: './Welcome',
-            //       authority: ['admin'],
-            //     },
-            //   ],
-            // },
-            // {
-            //   name: 'list.table-list',
-            //   icon: 'table',
-            //   path: '/list',
-            //   component: './ListTableList',
+            //   path: '/mind',
+            //   name: 'mind',
+            //   component: './Welcome',
             // },
             {
               component: './404',

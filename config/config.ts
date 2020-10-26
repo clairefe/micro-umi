@@ -78,17 +78,24 @@ export default defineConfig({
               path: '/list',
               component: './ListTableList',
             },
-            //路由关联模式路径为/app1
+            //路由关联模式路径为/editor
             {
-              name: 'app1',
-              icon: 'table',
-              path: '/app1',
-              microApp: 'app1',
-              // microAppProps: {
-              //   autoSetLoading: true,
-              //   className: 'myContainer',
-              //   wrapperClassName: 'myWrapper',
-              // }
+              name: 'editor',
+              icon: 'highlight',
+              // path: '/editor',
+              // microApp: 'editor',
+              routes: [
+                {
+                  path: '/editor',
+                  name: 'flow',
+                  microApp: 'editor',
+                },
+                // {
+                //   path: '/editor/mind',
+                //   name: 'mind',
+                //   microApp: 'editor',
+                // },
+              ],
             },
             {
               component: './404',
@@ -120,11 +127,8 @@ export default defineConfig({
     master: {
       apps: [
           {
-            name: 'app1', // 唯一 id
+            name: 'editor', // 唯一 id
             entry: '//localhost:8001', // html entry
-            props: {
-              age: 11111111111,
-            },
           }
       ],
       //   jsSandbox: true, // 是否启用 js 沙箱，默认为 false
